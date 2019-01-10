@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Awards</title>
+	<link rel="stylesheet" type="text/css" href="CSS/Styles.css"><!--imports the CSS, JS and jquery-->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+	<script src="JS/shopScript.js"></script>
+</head>
+<body>
+	<header class = "main-header">
+			<nav class="nav main-nav"><!--this is the main navigation bar-->
+                <ul>
+                    <a href="home.html"><li>HOME</li></a>
+					<a href="Music.html"><li>MUSIC</li></a>
+					<a href="Videos.html"><li>VIDEOS</li></a>
+					<a href="Tour.html"><li>TOUR</li></a>
+					<a href="shop.html"><li>SHOP</li></a>
+					<a href="Bio.html"><li>BIO</li></a>
+					<a href="Gallery.html"><li>GALLERY</li></a>
+					<a href="Contact.html"><li>CONTACT</li></a>
+					<a href="Awards.html"><li>AWARDS</li></a>
+					<a href="Demo.html"><li>DEMO</li></a>
+                </ul>
+            </nav>
+            <hr>
+        </header>
+		<section class="content-section container"><!--this contains the main body of the page -->
+		<embed src="ASSETS/AwardSpeech.mp3"<!--will play the audio file on load-->
+			loop="false" 
+			autoplay="true" 
+			width="0" 
+			height="0">
+		</embed>
+		
+		<p class = "award">	Hayley has won a total of two awards the MTV Video Music Award for Push Artist of the Year
+		and the billboard Rising Star Award</p><!-- paragraph describing the awards-->
+		<div class = "acceptSpeech"><!--contains the embedded youtube video-->
+		<!-- youtube video-->
+		<iframe style = "width:50%;height:auto;"
+			src="https://www.youtube.com/embed/qtLek2Ish1I">
+			</iframe>
+		</div>
+<a href="#" class = "myBtn" style = "margin-left:47%; color:#4d194d;">Take a Quiz</a><!--the button that will trigger the pop ip-->
+		<div class = "overlay" id = "overlay">
+			<div class = "popup">
+				<div class = "close">X</div><!--the close button for the pop up-->
+				<h2>Quiz</h2>
+				<button id = "startbutton"class = "CB" onclick="Start()">Start</button><!--button to start the quiz-->
+				<p id="1" style = "display:none;">Which original disney channel movie did Hayley star in? <br><!--these are the questions they are all set to not display to start and is then controlled by javascript-->
+				A. Camp Rock<br>
+				B. Lemonade Mouth<br>
+				C. Princess Protection Program</p>
+				<p id="2" style = "display:none;">What is Hayley known as among her fans? <br>
+				A. Queen of Lesbians<br>
+				B. Lesbian Jesus<br>
+				C. Gay God</p>
+				<p id="3" style = "display:none;">What role did Hayley have in Scooby Doo - The Mystery Begins! <br>
+				A. Swamp Monster<br>
+				B. Velma<br>
+				C. Fred's sister</p>
+				<p id="4" style = "display:none;">Which was Hayley's first music video to hit 100M youtube views? <br>
+				A. Cliffs Edge<br>
+				B. Girls Like Girls<br>
+				C. Sleepover</p>
+				<p id="5" style = "display:none;">Who presented Hayley her Billboard rising star award? <br>
+				A. Camila Cabello<br>
+				B. Lauren Jauregui<br>
+				C. Taylor Swift</p>
+				<p id="6" style = "display:none;"></p>
+				<button id = "A"  style = "display:none;"  class = "CB" onclick="ShowHide()">A</button><!--these are the answer buttons they control the java functions run to select the answer and add to the score-->
+				<button id = "B"  style = "display:none;"  class = "CB" onclick="ShowHide(); Score()">B</button>
+				<button id = "C"  style = "display:none;"  class = "CB" onclick="ShowHide()">C</button>
+			</div>
+		</div>
+        </section>
+<script>//the script is in the html doc as it was giving errors and not linking corrctly
+var count = 1;//the question the user is one is initialized to 1
+var score = 0;//score is initialized to 0
+function Score(){//this function when called will add 1 to the score
+	score = score + 1;
+}
+function Start(){//this is called to start the quiz
+	var A = document.getElementById("1");//loading the questions into variables
+	var B = document.getElementById("2");
+	var C = document.getElementById("3");
+	var D = document.getElementById("4");
+	var E = document.getElementById("5");
+	var F = document.getElementById("6");
+	var G = document.getElementById("A");
+	var H = document.getElementById("startbutton");
+	var I = document.getElementById("B");
+	var J = document.getElementById("C");
+	H.style.display = 'none';//these control which questions are displayed on the screen and which are hidden
+	G.style.display = 'block';
+	A.style.display = 'block';
+	B.style.display = 'none'
+	C.style.display = 'none'
+	D.style.display = 'none'
+	E.style.display = 'none'
+	F.style.display = 'none'
+	I.style.display = 'block';
+	J.style.display = 'block';
+	count = count + 1;//increases the count so when the next function is called it will be on the correct question
+	return;
+}
+function ShowHide() {//this function handles all other questions
+    var A = document.getElementById("1");//loading the questions into variables
+	var B = document.getElementById("2");
+	var C = document.getElementById("3");
+	var D = document.getElementById("4");
+	var E = document.getElementById("5");
+	var F = document.getElementById("6");
+	var G = document.getElementById("A");
+	var I = document.getElementById("B");
+	var J = document.getElementById("C");
+
+	if(count == 2){//each of these if statements check which question is being asked and displays the correct question
+		B.style.display = 'block';
+		A.style.display = 'none'
+		C.style.display = 'none'
+		D.style.display = 'none'
+		E.style.display = 'none'
+		F.style.display = 'none'
+		count = count + 1;
+		return;
+	}
+	if(count == 3){
+		C.style.display = 'block';
+		B.style.display = 'none'
+		A.style.display = 'none'
+		D.style.display = 'none'
+		E.style.display = 'none'
+		F.style.display = 'none'
+		count = count + 1;
+		return;
+	}
+	if(count == 4){
+		D.style.display = 'block';
+		B.style.display = 'none'
+		C.style.display = 'none'
+		A.style.display = 'none'
+		E.style.display = 'none'
+		F.style.display = 'none'
+		count = count + 1;
+		return;
+	}
+	if(count == 5){
+		E.style.display = 'block';
+		B.style.display = 'none'
+		C.style.display = 'none'
+		D.style.display = 'none'
+		A.style.display = 'none'
+		F.style.display = 'none'
+		count = count + 1;
+		return;
+	}
+	if(count == 6){
+		F.style.display = 'block';
+		B.style.display = 'none'
+		C.style.display = 'none'
+		D.style.display = 'none'
+		E.style.display = 'none'
+		A.style.display = 'none'
+		G.style.display = 'none'
+		I.style.display = 'none'
+		J.style.display = 'none'
+		getLocation()
+		count = count + 1;
+		return;
+	}
+	
+}
+var F = document.getElementById("6");//this is the end screen with the score
+
+function getLocation() {//this gets the location and if it cant it will display an error message
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    F.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {//this produces the output for the end screen displayingthe sers score and location
+  F.innerHTML = "Your score out of 5 is: " + score + "<br>(Just to include Geolocation) Your location is: <br>Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+		<footer class="main-footer"><!--this is the footer for the website-->
+            <div class="container main-footer-container">
+                <h3 class="band-name">Hayley Kiyoko</h3>
+                <ul class="nav footer-nav"><!-- links social media with pictures of the logos-->
+                    <li>
+                        <a href="https://www.youtube.com/user/TheHayleyKiyokoVEVO" target="_blank">
+                            <img src="IMAGES/Youtube.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://open.spotify.com/artist/3LjhVl7GzYsza1biQjTpaN" target="_blank">
+                            <img src="IMAGES/Spotify.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/HayleyKiyoko" target="_blank">
+                            <img src="IMAGES/Twitter.png">
+                        </a>
+                    </li>
+					<li>
+                        <a href="https://www.instagram.com/hayleykiyoko/" target="_blank">
+                            <img src="IMAGES/Instagram.png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+</body>
+</html>
