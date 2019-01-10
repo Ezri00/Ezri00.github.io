@@ -45,7 +45,6 @@ var data = {"total":0,"rows":[]};//initializes array for the data of the store
 			
 			$('.mobilebutton').click(
 				function(name,price){
-					alert("running");
 					var name = "";
 					var price = "";
 					name = document.getElementById("u").innerHTML;
