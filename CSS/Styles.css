@@ -318,7 +318,7 @@ body{/*sets the bg colour to black*/
 }
 /*when on devices with resolution less than 800px this will be in effect*/
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1441px) {
 .main-footer {/*removes the footer when on mobile*/
 	display:none;
     
