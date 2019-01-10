@@ -302,7 +302,7 @@ body{/*sets the bg colour to black*/
 	
 	}
 	
-@media only screen and (min-width: 801px) {/*when on devices with resolution over 801px this will be in effect*/
+@media only screen and (min-width: 601px) {/*when on devices with resolution over 601px this will be in effect*/
 /*this removes elements that are for mobile*/
 .newline{
 	display:none;
@@ -316,7 +316,7 @@ body{/*sets the bg colour to black*/
 
 }
 	
-	@media only screen and (max-width: 800px) {/*when on devices with resolution less than 800px this will be in effect*/
+	@media only screen and (max-width: 600px) {/*when on devices with resolution less than 600px this will be in effect*/
 
 .main-footer {/*removes the footer when on mobile*/
 	display:none;
