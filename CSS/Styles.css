@@ -302,8 +302,9 @@ body{/*sets the bg colour to black*/
 	
 	}
 	
-/*@media only screen and (min-width: 601px) {/*when on devices with resolution over 321px this will be in effect*/
 /*this removes elements that are for mobile*/
+/*when on devices with resolution over 321px this will be in effect*/
+/*@media only screen and (min-width: 601px) {
 .newline{
 	display:none;
 }
