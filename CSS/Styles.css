@@ -321,6 +321,9 @@ body{/*sets the bg colour to black*/
 	display:none;
     
 }
+body{
+	background-color: #00ff00;
+}
 
 .block {
     position:absolute;
